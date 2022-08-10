@@ -7,14 +7,14 @@
 
 library(data.table)
 
-setwd('~/Dropbox/crc_new')
-getwd()
+# setwd('~/Dropbox/crc_new')
+# getwd()
 
 # -------------------------------------------
 #
 # Read the raw data
 #
-data.raw <- read.table('clean-GWA-data.raw', header = TRUE)
+data.raw <- read.table('Ghana_Prostate.raw', header = TRUE)
 dim(data.raw)
 head(names(data.raw), 10)
 
@@ -44,7 +44,7 @@ ss_cases <- SSS[which(SSS[,4] == 2),]
 ss_cases <- ss_cases[order(ss_cases[,3], decreasing = F),]
 head(ss_cases)
 hist(ss_cases[,3])
-ss_cases_good <- ss_cases[1:nrow(ss_controls),]
+ss_cases_good <- ss_cases[1:nrow(ss_cases),]
 max(ss_cases_good[,3])
 
 
